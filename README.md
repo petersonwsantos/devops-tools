@@ -1,18 +1,18 @@
-# DevOps Tools
+# DEVOPS-TOOLS
 
 
-# Cloud Providers
+#### Cloud Providers
 - [x] Aws cli
 - [x] Heptio Authenticator
 - [x] Gcloud cli
 - [ ] Azure
 
-# Docker tools
+#### Docker tools
 - [x] Docker
 - [ ] Compose
 - [ ] Kompose
 
-# Kubernetets tools
+#### Kubernetets tools
 - [x] Kubectl
 - [x] Helm
 - [x] Kubens
@@ -20,14 +20,14 @@
 - [x] Skaffold
 - [x] Kops
 
-# Automation 
+#### Automation 
 - [x] Terraform
 - [x] Jenkins_x
 - [x] Puppet Agent
 - [x] Puppet PDK
 - [x] Beaker(puppet)
 
-# Misc
+#### Misc
 - [x] Hub
 - [x] Generate ssh Keys
 - [x] Oh My Zsh
