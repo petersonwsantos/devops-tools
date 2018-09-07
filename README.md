@@ -7,7 +7,7 @@
 - [x] Gcloud cli
 - [ ] Azure
 
-#### Docker tools
+#### Docker and tools
 - [x] Docker
 - [ ] Compose
 - [ ] Kompose
