@@ -1,8 +1,9 @@
 # DevOps Tools
 
 
-# cloud_providers
+# Cloud Providers
 - [x] Aws cli
+- [x] Heptio Authenticator
 - [x] Gcloud cli
 - [ ] Azure
 
@@ -18,7 +19,6 @@
 - [x] Kubectx
 - [x] Skaffold
 - [x] Kops
-- [x] Heptio Authenticator
 
 # Automation 
 - [x] Terraform
