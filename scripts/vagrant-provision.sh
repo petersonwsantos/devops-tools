@@ -182,16 +182,16 @@ fi
 
 # puppet agent 
 if [[ "$install_puppet" == "yes"  ]]; then
-    wget https://apt.puppetlabs.com/puppet5-release-xenial.deb
+    wget -q https://apt.puppetlabs.com/puppet5-release-xenial.deb
     dpkg -i puppet5-release-xenial.deb
     apt update
-    apt install -y puppet-agent
+    apt install -y puppet
     rm puppet5-release-xenial.deb
 fi 
 
 # Puppet Development Kit
 if [[ "$install_puppet_pdk" == "yes"  ]]; then
-    wget https://puppet-pdk.s3.amazonaws.com/pdk/1.7.0.0/repos/deb/xenial/PC1/pdk_1.7.0.0-1xenial_amd64.deb
+    wget -q https://puppet-pdk.s3.amazonaws.com/pdk/1.7.0.0/repos/deb/xenial/PC1/pdk_1.7.0.0-1xenial_amd64.deb
     dpkg -i pdk_1.7.0.0-1xenial_amd64.deb
     apt -f install 
     rm pdk_1.7.0.0-1xenial_amd64.deb
