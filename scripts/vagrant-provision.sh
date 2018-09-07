@@ -16,6 +16,8 @@ install_google_cloud_cli="yes"          # yes/no
 
 # docker tools
 install_docker="yes"                    # yes/no
+install_compose="1.22.0"                # version or latest
+
 
 # Kubernetets tools
 install_kubectl="yes"                   # yes/no   
@@ -24,6 +26,8 @@ install_kubens_keubectx="yes"           # yes/no
 install_skaffold="latest"               # version or latest
 install_kops="latest"                   # version or latest
 install_heptio_authenticator="0.3.0"    # only version 
+install_kompose="1.16.0"                # version or latest
+
 
 # automation
 install_packer="1.2.5"                  # only version 
@@ -91,6 +95,32 @@ if [[ "$install_docker" == "yes"  ]]; then
     curl -fsSL https://get.docker.com | sudo sh
     sudo usermod -aG docker vagrant
 fi
+
+
+# Docker compose 
+if [[ "$install_compose"  != "" ]]; then
+    if [[ "$install_compose" == "latest"  ]]; then
+        compose_ver=$(curl -sS https://api.github.com/repos/docker/compose/releases/latest | jq -r .tag_name | sed -e 's/^v//')
+    else     
+        compose_ver=$install_compose
+    fi   
+    curl -L "https://github.com/docker/compose/releases/download/${compose_ver}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
+fi
+
+# Kompose - convert compose to kubernettes yaml
+if [[ "$install_kompose"  != "" ]]; then
+    if [[ "$install_kompose" == "latest"  ]]; then
+        kompose_ver=$(curl -sS https://api.github.com/repos/kubernetes/kompose/releases/latest | jq -r .tag_name | sed -e 's/^v//')
+    else     
+        kompose_ver=$install_kompose
+    fi   
+    curl -L https://github.com/kubernetes/kompose/releases/download/v${kompose_ver}/kompose-linux-amd64 -o kompose
+    chmod +x kompose
+    mv ./kompose /usr/local/bin/kompose
+fi
+
+
 
 # kubectl
 if [[ "$install_kubectl" == "yes"  ]]; then

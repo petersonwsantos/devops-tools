@@ -36,8 +36,8 @@
 
 
 ##### Run Vagrant devops-tools
-```bash
-$ git clone https://github.com/petersonwsantos/devops-tools.git
-$ cd devops-tools 
-$ vagrant up
+```console
+    git clone https://github.com/petersonwsantos/devops-tools.git
+    cd devops-tools 
+    vagrant up
 ```
