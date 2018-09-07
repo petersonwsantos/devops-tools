@@ -12,7 +12,7 @@
 - [ ] Compose
 - [ ] Kompose
 
-#### Kubernetets tools
+#### Kubernetets and tools
 - [x] Kubectl
 - [x] Helm
 - [x] Kubens
@@ -20,7 +20,7 @@
 - [x] Skaffold
 - [x] Kops
 
-#### Automation 
+#### Automation Tools 
 - [x] Terraform
 - [x] Jenkins_x
 - [x] Puppet Agent
