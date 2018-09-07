@@ -8,7 +8,7 @@ blue=$'\e[1;34m'
 # dev tools and misc
 install_hub="2.5.0"                     # version or latest
 gen_ssh_keys="yes"                      # yes/no
-install_oh_my_zsh="yes"               # yes/no
+install_oh_my_zsh="yes"                 # yes/no
 
 #cloud_providers
 install_awscli="yes"                    # yes/no     
@@ -25,8 +25,10 @@ install_skaffold="latest"               # version or latest
 install_kops="latest"                   # version or latest
 install_heptio_authenticator="0.3.0"    # only version 
 
-# automation 
+# automation
+install_packer="1.2.5"                  # only version 
 install_terraform="latest"              # version or latest
+# CI/CD
 install_jenkins_x="v1.3.89"             # version or latest
 #PuppetLabs
 install_puppet_agent="yes"              # yes/no    
@@ -202,6 +204,16 @@ if [[ "$install_puppet_beaker" == "yes"  ]]; then
     apt-get install -y ruby-dev libxml2-dev libxslt1-dev g++ zlib1g-dev
     gem install beaker
 fi 
+
+# Packer 
+if [[ "$install_packer" != ""  ]]; then
+    packer_version=$install_packer
+    wget -q https://releases.hashicorp.com/packer/${packer_version}/packer_${packer_version}_linux_amd64.zip
+    unzip packer_${packer_version}_linux_amd64.zip
+    mv  -fv packer /usr/local/bin/
+fi
+
+
 
 if [[ "$install_oh_my_zsh" == "yes"  ]]; then
     ls /home/vagrant/.oh-my-zsh &> /dev/null && rm -rf /home/vagrant/.oh-my-zsh

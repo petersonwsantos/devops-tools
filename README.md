@@ -21,11 +21,13 @@
 - [x] Kops
 
 #### Automation Tools 
+- [x] Packer
 - [x] Terraform
 - [x] Jenkins_x
 - [x] Puppet Agent
 - [x] Puppet PDK
 - [x] Beaker(puppet)
+
 
 #### Misc
 - [x] Hub
