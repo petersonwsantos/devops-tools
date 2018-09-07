@@ -12,7 +12,7 @@
 - [ ] Compose
 - [ ] Kompose
 
-#### Kubernetets and tools
+#### Kubernetes and tools
 - [x] Kubectl
 - [x] Helm
 - [x] Kubens
